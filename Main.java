@@ -1,9 +1,6 @@
 import java.util.*;
 public class Main{
-    static String name="Afeefa";
-    static String email="afeefa@gmail.com";
-    static String username="Afeefa9500";
-    static String password="ZB4LmJP7";
+    static User user=new User();
     static void displayMenu(Scanner sc){
         int choice;
         
@@ -49,15 +46,15 @@ public class Main{
     }
     static boolean Login(String ipname, String ippassword){
 
-        return username.equals(ipname) && password.equals(ippassword);
+        return user.username.equals(ipname) && user.password.equals(ippassword);
     }
     static void takeTest(){
         System.out.println("Test started...");
         // Add test logic here
     }
     static void viewProfile(){
-        System.out.println("Name: "+name);
-        System.out.println("Email: "+email);
+        System.out.println("Name: "+user.name);
+        System.out.println("Email: "+user.email);
     }
     static void viewScores(){
         System.out.println("Math: 85");
@@ -66,13 +63,13 @@ public class Main{
     }
     static void updateProfile(Scanner sc){
         // Add update profile logic here
-         
+       
         System.out.println("Enter new name: ");
-        name = sc.nextLine();
+        user.name = sc.nextLine();
         System.out.println("Enter new email: ");
-        email = sc.nextLine();
+        user.email = sc.nextLine();
         System.out.println("Enter new password: ");
-        password = sc.nextLine();
+        user.password = sc.nextLine();
         System.out.println("Profile updated successfully.");
          
     }
@@ -85,6 +82,10 @@ public class Main{
 
         System.out.println("---------------------------------------------------------------------------------");
         
+        user.name="Afeefa";
+        user.email="afeefa@gmail.com";
+        user.username="afeefa9500";
+        user.password="ZB4LmJP7";
         int attempt=1;
         while(attempt<=3){
             System.out.println("Enter username: ");
